@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F8EFB3 0% 0% no-repeat padding-box;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.name {
+    display: block;
+    color: #3D2D2A;
+    font-family: neue-haas-grotesk-display, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 3em;
+    margin: 0 auto;
+    user-select: none;
+}
+
+.list-container {
+    display: block;
+    padding: 5%;
+    width: 100%;
+    padding-top: 5px;
+}
+
+#lstForm {
+    width: 100%;
+}
+
+.title {
+    display: block;
+    width: 100%;
+    background: none;
+    padding: 20px 0 5px 0;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    color: #3D2D2A;
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 3em;
+}
+
+.title.placeholder::before {
+    content: attr(placeholder);
+    color: #b6ab83;
+    display: block;
+    /* position: absolute; */
+    cursor: text;
+    font-family: neue-haas-grotesk-text, sans-serif;
+}
+
+.modes {
+    display: inline-block;
+    padding-bottom: 24px;
+}
+
+.modes>a {
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.3em;
+    user-select: none;
+    color: #4A3A37;
+    display: flex;
+    align-items: center;
+}
+
+.checkSelected>.toggleEdit {
+    display: none;
+}
+
+.editSelected>.toggleCheck {
+    display: none;
+}
+
+.icon {
+    margin-right: 8px;
+}
+
+.modes>a:hover, .modes>a:hover>.icon {
+    color: #7a6a66;
+    fill: #7a6a66;
+    cursor: pointer;
+}
+
+.tasks {
+    margin-left: 30px;
+}
+
+.tasks>li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #3D2D2A;
+}
+
+.cursor:before {
+    content: "•";
+    font-size: 40px;
+    padding-right: 20px;
+    color: rgb(117, 103, 82);
+    opacity: .9;
+}
+
+.norm::before, .dark:before {
+    content: "•";
+    text-decoration: none;
+    font-size: 40px;
+    padding-right: 20px;
+    color: #3D2D2A;
+    opacity: .9;
+}
+
+.add-input {
+    padding: 10px;
+    width: 100%;
+    min-height: 80px;
+    background: none;
+    width: min-content;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    color: #3D2D2A;
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    resize: none;
+    min-height: 40px;
+    padding: 5px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.add-input:hover {
+    color: #4A3A37;
+}
+
+.item>span {
+    width: 100%;
+}
+
+.cursor>.add-input {
+    width: 100%;
+    min-height: 60px;
+    background-color: #F0E7AB;
+}
+
+.checklistMode>.norm:hover>.add-input {
+    cursor: pointer;
+}
+
+.checklistMode>.norm:hover>span {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.checklistMode>.norm:hover>span::after, .checklistMode>.norm:active>span::after {
+    border-bottom: 3px solid rgba(74, 58, 55, 0.80);
+    content: "";
+    left: 0;
+    margin-top: calc(0.125em / 2 * -1);
+    position: absolute;
+    right: 0;
+    top: 55%;
+}
+
+.tasks>li:last-of-type:hover>span::placeholder, .title::placeholder {
+    color: rgb(117, 103, 82);
+    opacity: .5;
+}
+
+.tasks>li:nth-of-type(1)>span::placeholder {
+    color: rgb(117, 103, 82);
+    opacity: .5;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
+    font-family: neue-haas-grotesk-text, sans-serif;
+    font-weight: 800;
+    font-size: 1.1em;
+    color: #FFF;
+    background-color: #3D2D2A;
+    padding: 8px 40px;
+    text-align: center;
+    opacity: 0.9;
+    border-radius: 5px;
+    transition: 0.25s;
+    margin-top: 45px;
+}
+
+.button:hover {
+    background-color: #2c201d;
+}
+
+.button:active {
+    background-color: #1b1412;
+}
+
+@media screen and (max-width: 400px) {
+    .header {
+        padding: 10px;
+    }
+    .name {
+        font-size: 1.5em;
+        padding: 0;
+    }
+    .title {
+        font-size: 2em;
+        padding: 0 10px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    .modes {
+        display: flex;
+        justify-content: center;
+    }
+    .modes>a {
+        text-align: center;
+        margin: 0 auto;
+        font-size: 1rem;
+    }
+    .tasks {
+        margin-left: 0;
+    }
+    li>.add-input {
+        font-size: 2em;
+        padding: 10px;
+        min-height: 30px;
+    }
+}
